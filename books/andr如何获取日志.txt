@@ -1,0 +1,41 @@
+方法1：通过USB调试线
+
+1、先网上下载sdk下载，下载成功后，解压。
+
+2、进入Android系统--设置中，找到和勾选“开发者选项”中“USB调试”（有时找不到开发者选项，可以在“设置”-"关于"中找到"版本号"，连续点击几下，就会提示，进入“开发者选项”了）
+
+3、开始--运行--输入“CMD”，进入DOS命令框，再进入sdk目录下的platform-tools文件中，比如：E:\Android\sdk\platform-tools（建议：配置环境变量）
+
+4、输入adb kill-server（目的：确保没有其他设备接入），再用USB调试线插入Android设备
+
+5、输入adb devices回车
+
+6、输入adb logcat回车，就可以获取日志
+
+ 
+
+方法2：通过IP连接设备（注：一定要在同一局域网网段，否则无法连接）
+
+1、先网上下载sdk下载，下载成功后，解压。
+
+2、进入Android系统--设置中，找到和勾选“开发者选项”中“USB调试”（有时找不到开发者选项，可以在“设置”-"关于"中找到"版本号"，连续点击几下，就会提示，进入“开发者选项”了）
+
+3、开始--运行--输入“CMD”，进入DOS命令框，再进入sdk目录下的platform-tools文件中，比如：E:\Android\sdk\platform-tools（建议：配置环境变量）
+
+4、输入adb kill-server
+
+5、输入adb devices回车（目的：确保没有其他设备接入）
+
+6、输入 adb connect 192.168.XXX.XXX (移动设备IP，一般在设置--关于手机--状态消息中查看)
+
+7、输入adb devices回车（目的：确保连接192.168.XXX.XXX设备），能显示连接192.168.XXX.XXX，说明连接成功。
+
+8、输入adb logcat回车，就可以获取日志。（注：如嫌日志过多了，可以先输入adb logcat -c清除日志，在输入adb logcat）
+
+
+方法3：
+
+用Android Studio 获取日志，原理也是采用logcat?
+
+方法 4：
+自己写脚本
